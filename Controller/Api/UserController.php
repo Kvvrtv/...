@@ -18,7 +18,8 @@ class UserController extends BaseController
                 }
                 $arrUsers = $userModel->getUsers($intLimit);
                 $responseData = json_encode($arrUsers);
-            } catch (Error $e) {
+                var_dump($arrUsers);
+            } catch (Exception $e) {
                 $strErrorDesc = $e->getMessage().'Something went wrong! Please contact support.';
                 $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
             }
